@@ -1,18 +1,33 @@
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RegistrationPage from './pages/RegistrationPage';
-import BookingTrackerPage from './pages/BookingTrackerPage';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage";
+import BookingTrackerPage from "./pages/BookingTrackerPage";
+import DoctorsPage from "./pages/DoctorsPage/DoctorsPage";
+import BookingPage from "./pages/BookingPage/BookingPage";
+import DepartmentsPage from "./pages/DepartmentsPage/DepartmentsPage";
+import HomePage from "./pages/HomePage/HomePage";
+import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
   return (
-    <Router>
+    <>
+      <nav>
+        <NavBar />
+      </nav>
+
       <Routes>
-        <Route path="/" element={<RegistrationPage />} />
+        <Route path="/" element={<HomePage />} />
+
+        <Route path="/departments" element={<DepartmentsPage />}>
+          <Route path=":department" element={<DoctorsPage />} />
+          <Route path=":department/:doctorId" element={<BookingPage />} />
+        </Route>
+        
+        <Route path="/RegistrationPage" element={<RegistrationPage />} />
         <Route path="/check-status" element={<BookingTrackerPage />} />
-        <Route path="*" element={<RegistrationPage />} /> 
+        <Route path="*" element={<RegistrationPage />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 
