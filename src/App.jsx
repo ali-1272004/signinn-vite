@@ -18,11 +18,18 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/departments" element={<DepartmentsPage />}>
-          <Route path=":department" element={<DoctorsPage />} />
-          <Route path=":department/:doctorId" element={<BookingPage />} />
-        </Route>
-        
+        {/* Departments list */}
+        <Route path="/departments" element={<DepartmentsPage />} />
+
+        {/* Doctors list for a department */}
+        <Route path="/departments/:department" element={<DoctorsPage />} />
+
+        {/* Booking page for a doctor */}
+        <Route
+          path="/departments/:department/:doctorId"
+          element={<BookingPage />}
+        />
+
         <Route path="/RegistrationPage" element={<RegistrationPage />} />
         <Route path="/check-status" element={<BookingTrackerPage />} />
         <Route path="*" element={<RegistrationPage />} />
