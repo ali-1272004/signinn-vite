@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Healthca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <span>✚ Healthca</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">My Appointments</a></li>
+                <li><a href="#">Medical History</a></li>
+                <li><a href="#">Profile Settings</a></li>
+                <li style="margin-top: auto;"><a href="login.html">Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div>
+                    <h2 style="color: var(--primary-color);">Hello, Mohamed 👋</h2>
+                    <p style="color: var(--text-light);">Here is your appointment overview.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="user-info" style="text-align: right;">
+                        <strong>Mohamed Ahmed</strong><br>
+                        <small>Patient ID: #8832</small>
+                    </div>
+                    <div class="user-avatar">YA</div>
+                </div>
+            </header>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <h4 style="color: var(--text-light);">Upcoming</h4>
+                    <h1 style="color: var(--primary-color);">02</h1>
+                </div>
+                <div class="stat-card">
+                    <h4 style="color: var(--text-light);">Completed</h4>
+                    <h1 style="color: var(--success);">15</h1>
+                </div>
+                <div class="stat-card">
+                    <h4 style="color: var(--text-light);">Cancelled</h4>
+                    <h1 style="color: var(--danger);">01</h1>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">Upcoming Appointments</h3>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Department</th>
+                            <th>Date & Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dr. Sarah Smith</strong></td>
+                            <td>Cardiology</td>
+                            <td>Dec 10, 2025 - 10:00 AM</td>
+                            <td class="status-cell"><span class="badge badge-success">Confirmed</span></td>
+                            <td>
+                                <button class="btn btn-danger cancel-btn">Cancel</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Dr. Mark Doe</strong></td>
+                            <td>Dental Care</td>
+                            <td>Dec 15, 2025 - 02:30 PM</td>
+                            <td class="status-cell"><span class="badge badge-warning">Pending</span></td>
+                            <td>
+                                <button class="btn btn-danger cancel-btn">Cancel</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Dr. Emily Rose</strong></td>
+                            <td>Dermatology</td>
+                            <td>Nov 20, 2025 - 09:00 AM</td>
+                            <td class="status-cell"><span class="badge badge-danger">Cancelled</span></td>
+                            <td>
+                                <button class="btn btn-danger" disabled style="opacity: 0.5;">Cancelled</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
